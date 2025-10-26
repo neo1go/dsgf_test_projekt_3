@@ -1,10 +1,9 @@
+    
 from selenium import webdriver
-import time
-driver = webdriver.Firefox()
+from webdriver_manager.firefox import GeckoDriverManager
 
-try:
+def start_browser():
+    driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
     driver.get("https://www.saucedemo.com")
     print(driver.title)
-    time.sleep(10)
-finally:
-    driver.quit()
+    return driver
