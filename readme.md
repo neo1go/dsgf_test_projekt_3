@@ -18,3 +18,5 @@ robot und selenuim installiert
 geckodriver und webdrivermanager installiert (dient der automatischen passenden Drivererkennung, ohne das Pfade gesetzt werden müssen.)
  wsf windows subsystem for linux installiert mit ubuntu 24.04.3 als backend zur Ausführung der Container unter Windows.
  docker Desktop 4.49.0 installiert
+
+ mysql shell for vscode installiert, um mysql zu nutzen (anstatt mssql)

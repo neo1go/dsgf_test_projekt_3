@@ -12,3 +12,5 @@ driver.get("https://www.saucedemo.com")
 
 if __name__ == 'main':
     start_browser()
+    
+    trim_robot_log()
