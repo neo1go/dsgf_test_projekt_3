@@ -7,3 +7,7 @@ def get_users():
         "error_user"
         "visual_user"
     ]
+
+
+def get_password():
+    return "secret_sauce"

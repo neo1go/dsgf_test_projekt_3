@@ -10,3 +10,8 @@ robotframework-database
 # nachträglich    pip install robotframework-databaselibrary
 # dann: pip install selenium 
 # python.exe -m pip install --upgrade pip
+
+# selenium
+# robotframeworl
+# mysql-connector-python
+#

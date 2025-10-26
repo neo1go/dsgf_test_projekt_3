@@ -20,3 +20,7 @@ geckodriver und webdrivermanager installiert (dient der automatischen passenden 
  docker Desktop 4.49.0 installiert
 
  mysql shell for vscode installiert, um mysql zu nutzen (anstatt mssql)
+
+ mysql connector installiert, um mit python SQL Befehle zu senden.
+
+ pip install docker, damit python auch die Verbindung zu docker besitzt.
