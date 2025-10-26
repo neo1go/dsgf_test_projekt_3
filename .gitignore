@@ -7,7 +7,7 @@ __pycache__/
 
 # Robot Framework
 results/
-*.log
+# *.log
 *.xml
 *.html
 
@@ -17,7 +17,7 @@ results/
 *.tar
 docker-compose.override.yml
 
-# Adminer (falls lokal eingebunden)
+# Adminer 
 adminer.php
 
 # MySQL
