@@ -2,17 +2,27 @@
 from selenium import webdriver
 from geckodriver import start_browser
 from trim_log import trim_robot_log
-from docker_control import start_docker
+from docker_control import start_containers
+from docker_control import stop_containers
+from docker_control import remove_containers
+from docker_desktop_start import docker_app_start
+from adminer_interface import adminer_view
 
-driver = webdriver.Firefox()
-driver.get("https://www.saucedemo.com")
-
-
-
-
-
-if __name__ == 'main':
+def main():
     start_browser()
-    start_docker()
+    docker_app_start()
+    start_containers()
+    adminer_view()
+    # Seite mit selenium scrappen
+    # Tests an den Daten ausführen
+    # Daten in die Datenbank schreiben
+  
     
+    #stop_containers()
+    #remove_containers()
     trim_robot_log()
+
+
+
+if __name__ == '__main__':
+    main()

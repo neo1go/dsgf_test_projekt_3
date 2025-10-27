@@ -7,11 +7,12 @@ robotframework-datadriver
 robotframework-requests
 robotframework-database
 
-# nachträglich    pip install robotframework-databaselibrary
-# dann: pip install selenium 
-# python.exe -m pip install --upgrade pip
+# nachträglich  
+pip install robotframework-databaselibrary
 
-# selenium
-# robotframeworl
-# mysql-connector-python
-#
+# nicht in requirements sondern im Terminal ausgefhührt
+pip install selenium 
+python.exe -m pip install --upgrade pip
+
+ mysql-connector-python
+ pip install docker

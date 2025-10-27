@@ -1,4 +1,8 @@
-# db.keywords.py
+"""
+Die keywords können so in python definiert werden und von robot ausgeführt werden.
+Bei diesem Keyword handelt es sich um eine Datenbankoperation.
+
+"""
 from robot.api.deco import keyword
 import mysql.connector
 

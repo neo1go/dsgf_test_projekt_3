@@ -24,3 +24,11 @@ geckodriver und webdrivermanager installiert (dient der automatischen passenden 
  mysql connector installiert, um mit python SQL Befehle zu senden.
 
  pip install docker, damit python auch die Verbindung zu docker besitzt.
+
+ Umgebungsvariable für geckodriver gesetzt.
+
+ Docker desktop auf linux umgeschaltet.
+
+ Adminer einbinden.
+
+ 

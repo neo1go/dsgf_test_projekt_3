@@ -1,29 +1,36 @@
 import subprocess
-import docker 
 
-client = docker.from_env()
+COMPOSE_FILE = "docker-compose.yml"
 
-def start_docker():
-    subprocess.run(["docker-compose", "up", "-d"], check = True)
-    
-# Container wird nur gestoppt
-def stop_container(container_name):
+def start_containers():
     try:
-        container = client.containers.get(container_name)
-        container.stop()
-        print(f"Container '{container_name}' wurde gestoppt.")
-    except docker.errors.FileNotFoundError:
-        print(f"Container '{container_name}' nicht gefunden.")
-    except Exception as e:
-        print(f"Fehler beim Stooen: {e}")
-      
-# löscht den ganzen Container        
-def remove_container(container_name):
+        result = subprocess.run(
+            ["docker-compose", "-f", COMPOSE_FILE, "up", "-d"],
+            check=True,
+            capture_output=True,
+            text=True
+        )
+        print("✅ Container wurden gestartet.")
+        print(result.stdout)
+    except subprocess.CalledProcessError as e:
+        print("❌ Fehler beim Starten der Container:")
+        print(e.stderr)
+
+
+def stop_containers():
     try:
-        container = client.containers.get(container_name)
-        container.remove(force=True)
-        print(f"Container '{container_name}' wurde gelöscht.")
-    except docker.errors.NotFound:
-        print(f"Container '{container_name}' nicht gefunden.")
-    except Exception as e:
+        subprocess.run(["docker-compose", "-f", COMPOSE_FILE, "stop"], check=True)
+        print("Container wurden gestoppt.")
+    except subprocess.CalledProcessError as e:
+        print(f"Fehler beim Stoppen: {e}")
+
+
+def remove_containers(erase_volumes=False):
+    try:
+        cmd = ["docker-compose", "-f", COMPOSE_FILE, "down"]
+        if erase_volumes:
+            cmd.append("--volumes")
+        subprocess.run(cmd, check=True)
+        print("Container wurden gelöscht.")
+    except subprocess.CalledProcessError as e:
         print(f"Fehler beim Löschen: {e}")

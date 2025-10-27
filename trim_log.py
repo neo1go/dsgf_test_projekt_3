@@ -2,7 +2,7 @@ import os
 import glob
 
 def trim_robot_log():
-    log_dir = "logs/"
+    log_dir = "logs/"  #Pfad muss noch gesetzt werden.
     pattern = os.path.join(log_dir, "log-*.html")
 
     # Alle passenden Dateien finden
