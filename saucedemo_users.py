@@ -1,13 +1,7 @@
-def get_users():
-    return[
-        "standard_user",
-        "locked_out_user",
-        "problem_user",
-        "performance_glitch_user",
-        "error_user"
-        "visual_user"
-    ]
+# saucedemo_users.py
 
-
-def get_password():
-    return "secret_sauce"
+USERS = [
+    {"username": "standard_user", "password": "secret_sauce"},
+    {"username": "locked_out_user", "password": "secret_sauce"},
+    {"username": "problem_user", "password": "secret_sauce"},
+]

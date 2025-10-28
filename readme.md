@@ -31,4 +31,10 @@ geckodriver und webdrivermanager installiert (dient der automatischen passenden 
 
  Adminer einbinden.
 
+pip install geckdriver autoinstaller (firefox sponn)
+
+nochmals die seleniumlibrary-6.8.0 installiert unter venv y
+Successfully installed click-8.3.0 colorama-0.4.6 robotframework-seleniumlibrary-6.8.0
+
+
  
