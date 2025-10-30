@@ -1,9 +1,9 @@
 import os
 import glob
 
-def trim_robot_log():
-    log_dir = "logs/"  #Pfad muss noch gesetzt werden.
-    pattern = os.path.join(log_dir, "log-*.html")
+def trim_geckodriver_log():
+    log_dir = os.path.abspath("results") 
+    pattern = os.path.join(log_dir, "geckodriver-*.log")
 
     # Alle passenden Dateien finden
     log_files = glob.glob(pattern)
@@ -21,3 +21,4 @@ def trim_robot_log():
                 print(f"Fehler beim Löschen von {old_file}: {e}")
     
     
+ 

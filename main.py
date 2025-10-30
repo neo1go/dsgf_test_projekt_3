@@ -1,7 +1,7 @@
 
 from selenium import webdriver
 from geckodriver import start_browser
-from trim_log import trim_robot_log
+from trim_log import trim_geckodriver_log
 from docker_control import start_containers
 from docker_control import stop_containers
 from docker_control import remove_containers
@@ -23,7 +23,7 @@ def main():
     
     #stop_containers()
     #remove_containers()
-    trim_robot_log()
+    trim_geckodriver_log()
 
 
 
