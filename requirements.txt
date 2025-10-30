@@ -1,18 +1,18 @@
 # erst venv erstellen (lokale virtuelle Kapselung)
 # werden mit pip install -r requirements.txt einbgebunden
 
-robotframework
-robotframework-seleniumlibrary
-robotframework-datadriver
-robotframework-requests
-robotframework-database
+robotframework==7.3.2
+robotframework-seleniumlibrary==6.8.0 
+#robotframework-datadriver
+#robotframework-requests
+#robotframework-database
 
 # nachträglich  
-pip install robotframework-databaselibrary
+robotframework-databaselibrary==2.3.2
 
 # nicht in requirements sondern im Terminal ausgefhührt
-pip install selenium 
+pip install selenium==4.38.0
 python.exe -m pip install --upgrade pip
 
- mysql-connector-python
- pip install docker
+mysql-connector-python==9.5.0
+pip install docker==28.5.1
