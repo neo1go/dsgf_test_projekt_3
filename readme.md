@@ -2,27 +2,28 @@
 
 ## Installierte Anwendungen
 
-| Anwendung / Tool                 | Version       | Anmerkung |
-|---------------------------------|--------------|-----------|
+| Anwendung / Tool                 | Version      | Anmerkung |
+|----------------------------------|--------------|-----------|
 | Python                           | 3.11.8       | Basisinstallation |
-| Mozilla Firefox                  | -            | Muss noch installiert werden |
+| Mozilla Firefox                  | 144.0.2      | schon vorhanden |
 | GeckoDriverManager               | -            | Muss noch installiert werden |
 | Robot Framework                  | 7.3.2        | via requirements.txt |
 | Selenium Library                 | 6.8.0        | via requirements.txt |
 | Docker                           | 28.5.1       | lokal, über pip für Python auch 7.1.0 |
 | Docker Desktop                   | 4.49.0       | WSL/Ubuntu Backend |
-| Adminer                          | -            | eingebunden in Docker |
+| Adminer                          | 5.4.1        | eingebunden in Docker |
 | MySQL                            | 15.1         | über Docker |
-| WSL Ubuntu                        | 24.04.3      | Backend für Container-Ausführung unter Windows |
+| WSL Ubuntu                       | 24.04.3      | Backend für Container-Ausführung unter Windows |
 | MySQL Shell (VSCode)             | -            | zur DB-Nutzung |
 | MySQL Connector (Python)         | 9.5.0        | für SQL-Befehle aus Python |
-
+| VS-Code                          | 1.105.1      | IDE
+| Python                           | 3.11.8       | Programmiersprache
 ---
 
 ## Python-Pakete in venv
 
-| Paket                             | Version       |
-|----------------------------------|--------------|
+| Paket                             | Version      |
+|-----------------------------------|--------------|
 | attrs                             | 25.4.0       |
 | certifi                           | 2025.10.5    |
 | cffi                              | 2.0.0        |
@@ -49,16 +50,16 @@
 | robotframework-seleniumlibrary    | 6.8.0        |
 | selenium                          | 4.38.0       |
 | setuptools                        | 65.5.0       |
-| sniffio                            | 1.3.1       |
+| sniffio                           | 1.3.1        |
 | sortedcontainers                  | 2.4.0        |
 | sqlparse                          | 0.5.3        |
 | trio                              | 0.31.0       |
 | trio-websocket                    | 0.12.2       |
 | typing_extensions                 | 4.15.0       |
-| urllib3                            | 2.5.0       |
-| webdriver-manager                  | 4.0.2       |
+| urllib3                           | 2.5.0        |
+| webdriver-manager                 | 4.0.2        |
 | websocket-client                  | 1.9.0        |
-| wsproto                            | 1.2.0       |
+| wsproto                           | 1.2.0        |
 
 ---
 
@@ -76,6 +77,8 @@
 7. Docker Desktop auf Linux-Modus umstellen
 8. Adminer in Docker einbinden
 9. MySQL Shell für VSCode installieren
+
+---
 
 # Hinweise / Tipps
 
