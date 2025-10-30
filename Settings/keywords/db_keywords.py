@@ -5,7 +5,7 @@ from datetime import datetime
 # 🔧 Hilfsfunktion für DB-Verbindung
 def get_connection():
     return mysql.connector.connect(
-        host="localhost",      # falls du in Docker bist, ggf. anpassen
+        host="localhost",    
         user="root",
         password="geheim",
         database="testdb"

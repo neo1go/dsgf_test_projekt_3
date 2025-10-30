@@ -1,14 +1,14 @@
 ### readme
 ///Installierte Anwendungen
-Python
+Python 3.11.8
 Anwendungen, die noch installiert werden müssen:
 Mozilla Firefox
 GeckoDriverManager
-robot framework
-Selenium
-Docker und darin lokal
+robot framework 7.3.2
+Selenium Library 6.8.0
+Docker 28.5.1 und darin lokal
    Adminer
-   MySQL
+   MySQL 15.1
 
 lokales Repo initialisiert
 
@@ -33,7 +33,7 @@ geckodriver und webdrivermanager installiert (dient der automatischen passenden 
 
 pip install geckdriver autoinstaller (firefox sponn)
 
-nochmals die seleniumlibrary-6.8.0 installiert unter venv y
+nochmals die seleniumlibrary-6.8.0 installiert unter venv 
 Successfully installed click-8.3.0 colorama-0.4.6 robotframework-seleniumlibrary-6.8.0
 
 

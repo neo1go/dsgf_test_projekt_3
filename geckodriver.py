@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
-
+import os
 # globaler Driver
 driver = None
 
@@ -17,9 +17,16 @@ def start_browser():
 
     # Firefox-Optionen (sichtbar, nicht headless)
     options = Options()
-
-    # WebDriver Service erstellen
-    service = Service(executable_path=geckodriver_path)
+    options.headless = False
+    
+    log_file_path = os.path.join("results", "geckodriver.log")
+    
+   # WebDriver Service mit reduziertem Log-Level
+    service = Service(
+        executable_path=geckodriver_path,
+        log_output=log_file_path,
+        log_level="error"  # Alternativen: warn, fatal, info, config, debug, trace
+    )
 
     # Firefox WebDriver starten
     driver = webdriver.Firefox(service=service, options=options)
