@@ -13,15 +13,15 @@ import time
 def main():
     start_browser()
     docker_app_start()
-    time.sleep(20)
+    time.sleep(15)
     start_containers()
-    time.sleep(20)
+    time.sleep(15)
     adminer_view()
-    time.sleep(10)
+    #time.sleep(10)
     start_robot_tests()
     #stop_containers()
     #remove_containers()
-    trim_geckodriver_log()
+    #trim_geckodriver_log()
 
 
 

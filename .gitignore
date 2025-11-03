@@ -7,9 +7,12 @@ __pycache__/
 
 # Robot Framework
 #results/
-#*.log
-*.xml
-*.html
+#*log.html
+*output.xml
+*report.html
+
+# Selenium Screenshots
+*.png
 
 # Docker
 *.pid
@@ -19,6 +22,7 @@ docker-compose.override.yml
 
 # Adminer 
 adminer.php
+config/config.json
 
 # MySQL
 *.sql
@@ -29,3 +33,4 @@ mysql_data/
 .DS_Store
 .vscode/
 .idea/
+saucedemo_users.py
