@@ -8,6 +8,7 @@ from docker_control import remove_containers
 from docker_desktop_start import docker_app_start
 from adminer_interface import adminer_view
 from robot_start import start_robot_tests
+from show_log_html import show_log_in_browser
 import time
 
 def main():
@@ -18,9 +19,10 @@ def main():
     time.sleep(15)
     adminer_view()
     start_robot_tests()
+    show_log_in_browser()
     #stop_containers()
     #remove_containers()
-    #trim_geckodriver_log()
+    # trim_geckodriver_log()
 
 
 
