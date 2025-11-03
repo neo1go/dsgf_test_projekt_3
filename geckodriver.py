@@ -21,11 +21,11 @@ def start_browser():
     
     log_file_path = os.path.join("results", "geckodriver.log")
     
-   # WebDriver Service mit reduziertem Log-Level
+   # Selenium-WebDriver Service mit reduziertem Log-Level
     service = Service(
         executable_path=geckodriver_path,
-        log_output=log_file_path,
-        log_level="error"  # Alternativen: warn, fatal, info, config, debug, trace
+        log_output = log_file_path,
+        log_level = "error"  # Alternativen: error, all, debug, info, warning, severe, off oder eventuell os.devnull
     )
 
     # Firefox WebDriver starten

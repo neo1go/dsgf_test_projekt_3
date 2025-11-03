@@ -17,7 +17,6 @@ def main():
     start_containers()
     time.sleep(15)
     adminer_view()
-    #time.sleep(10)
     start_robot_tests()
     #stop_containers()
     #remove_containers()

@@ -94,7 +94,7 @@ Robot Framework Tests: Nutzen Selenium + GeckoDriver für Browserinteraktion.
 
 MySQL: Wird lokal über Docker bereitgestellt, Zugang über VSCode Shell oder Adminer möglich.
 
-Optional: Libraries wie robotframework-datadriver oder robotframework-requests können nach Bedarf installiert werden. Wegen der Eigenerstellung mittels Custom Keywords wurd auf deren Nutzung verzichtet.
+Optional: Libraries wie robotframework-datadriver oder robotframework-requests können nach Bedarf installiert werden. Wegen der Eigenerstellung mittels Custom Keywords wurde auf deren Nutzung verzichtet.
 
 # Lessons learned
 - Passwörter und alle Credentials vielleicht ganz am Anfang auslagern und diese Datei(en) bereits beim Start  eines Projektes auf die ignore-Liste setzten.

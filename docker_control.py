@@ -1,5 +1,6 @@
 import subprocess
 
+#Referenziert die Compose Datei
 COMPOSE_FILE = "docker-compose.yml"
 
 def start_containers():

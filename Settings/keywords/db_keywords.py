@@ -5,19 +5,27 @@ import json
 """
 Dies sind die keywords, die vom Robot Framework 
 verwendet werden.
+
+Cursor ist das Objekt zur Ausführung von SQL Befehlen und
+conn ist die Datenbankverbindung.
+Die Reihenfolge des Schließens der Verbindung muß eingehalten werden,
+sonst wird die Transaktion ungültig.
+
 Args:
-Cleanup DB
-Benutzer in Datenbank einfügen
-Kaufergebnis speichern
+- Cleanup DB
+- Benutzer in Datenbank einfügen
+- Kaufergebnis speichern
 """
 
-# liest die Variablen aus der config 
+
+# liest die Variablen aus der config Datei
 with open("config/config.json", "r")as file:
     config = json.load(file)
     
 mysql_config = config["mysql"]
 
-# Hilfsfunktion für DB-Verbindung
+
+# Hilfsfunktion für DB-Verbindung mit den Credentials aus der Config Datei
 def get_connection():
     return mysql.connector.connect(
         host = mysql_config["host"],    
@@ -36,7 +44,7 @@ def cleanup_db():
     conn.commit()
     cursor.close()
     conn.close()
-    print("🧹 Alte Testdaten in 'users' und 'purchases' gelöscht.")
+    print("Alte Testdaten in 'users' und 'purchases' gelöscht.")
 
 # Benutzer in Datenbank einfügen, nur wenn nicht existiert
 @keyword("Benutzer in Datenbank einfügen")
@@ -50,9 +58,9 @@ def insert_user(username, password):
             (username, password)
         )
         conn.commit()
-        print(f"✅ Benutzer '{username}' eingefügt.")
+        print(f"Benutzer '{username}' eingefügt.")
     else:
-        print(f"ℹ️ Benutzer '{username}' existiert bereits.")
+        print(f"ℹBenutzer '{username}' existiert bereits.")
     cursor.close()
     conn.close()
 
@@ -73,4 +81,4 @@ def save_purchase_result(username, product_name=None, price=None, success=False,
     conn.commit()
     cursor.close()
     conn.close()
-    print(f"💾 Kaufergebnis gespeichert: {username}, Erfolg: {success}")
+    print(f"Kaufergebnis gespeichert: {username}, Erfolg: {success}")

@@ -1,6 +1,8 @@
 import subprocess
 import os
-"""Hiermit wird die Docker Desktop App gestartet um die Container Erstellung zu gewährleisten
+
+"""
+Hiermit wird die Docker Desktop App gestartet, um die Container Erstellung zu gewährleisten.
 """
 
 

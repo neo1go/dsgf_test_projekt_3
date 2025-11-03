@@ -1,46 +1,46 @@
-1762160515994	geckodriver	INFO	Listening on 127.0.0.1:64888
-1762160519051	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64889" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofilehtm5Is"
+1762173341010	geckodriver	INFO	Listening on 127.0.0.1:63133
+1762173344062	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63134" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofile1LQw7H"
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
 Dynamically enable window occlusion 0
-1762160519345	Marionette	INFO	Marionette enabled
-1762160519420	Marionette	INFO	Listening on port 64902
-WebDriver BiDi listening on ws://127.0.0.1:64889
-Read port: 64902
-1762160519555	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1762173344409	Marionette	INFO	Marionette enabled
+1762173344495	Marionette	INFO	Listening on port 63145
+WebDriver BiDi listening on ws://127.0.0.1:63134
+Read port: 63145
+1762173344637	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.saucedemo.com."
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.saucedemo.com."
-1762160533792	RemoteAgent	WARN	TimedPromise timed out after 500 ms: stacktrace:
+1762173358405	RemoteAgent	WARN	TimedPromise timed out after 500 ms: stacktrace:
 TimedPromise/<@chrome://remote/content/shared/Sync.sys.mjs:448:24
 TimedPromise@chrome://remote/content/shared/Sync.sys.mjs:432:10
 interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:465:10
 webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:218:33
-1762160539492	RemoteAgent	WARN	TimedPromise timed out after 500 ms: stacktrace:
+1762173364088	RemoteAgent	WARN	TimedPromise timed out after 500 ms: stacktrace:
 TimedPromise/<@chrome://remote/content/shared/Sync.sys.mjs:448:24
 TimedPromise@chrome://remote/content/shared/Sync.sys.mjs:432:10
 interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:465:10
 webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:218:33
-1762160545100	RemoteAgent	WARN	TimedPromise timed out after 500 ms: stacktrace:
+1762173369673	RemoteAgent	WARN	TimedPromise timed out after 500 ms: stacktrace:
 TimedPromise/<@chrome://remote/content/shared/Sync.sys.mjs:448:24
 TimedPromise@chrome://remote/content/shared/Sync.sys.mjs:432:10
 interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:465:10
 webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:218:33
-1762160550735	RemoteAgent	WARN	TimedPromise timed out after 500 ms: stacktrace:
+1762173375351	RemoteAgent	WARN	TimedPromise timed out after 500 ms: stacktrace:
 TimedPromise/<@chrome://remote/content/shared/Sync.sys.mjs:448:24
 TimedPromise@chrome://remote/content/shared/Sync.sys.mjs:432:10
 interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:465:10
 webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:218:33
-1762160556461	RemoteAgent	WARN	TimedPromise timed out after 500 ms: stacktrace:
+1762173381001	RemoteAgent	WARN	TimedPromise timed out after 500 ms: stacktrace:
 TimedPromise/<@chrome://remote/content/shared/Sync.sys.mjs:448:24
 TimedPromise@chrome://remote/content/shared/Sync.sys.mjs:432:10
 interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:465:10
 webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:218:33
-1762160562162	RemoteAgent	WARN	TimedPromise timed out after 500 ms: stacktrace:
+1762173386652	RemoteAgent	WARN	TimedPromise timed out after 500 ms: stacktrace:
 TimedPromise/<@chrome://remote/content/shared/Sync.sys.mjs:448:24
 TimedPromise@chrome://remote/content/shared/Sync.sys.mjs:432:10
 interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:465:10
 webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:218:33
-1762160562220	Marionette	INFO	Stopped listening on port 64902
+1762173386715	Marionette	INFO	Stopped listening on port 63145
 Dynamically enable window occlusion 1
 console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
 console.error: (new TypeError("NetworkError when attempting to fetch resource.", ""))

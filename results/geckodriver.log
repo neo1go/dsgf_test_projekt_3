@@ -318,3 +318,101 @@ console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError
 JavaScript error: resource://gre/modules/ObliviousHTTP.sys.mjs, line 117: NS_ERROR_XPC_CANT_CONVERT_PRIMITIVE_TO_ARRAY: Cannot convert primitive JavaScript value into an array arg 2 [nsIObliviousHttpService.newChannel]
 console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
 JavaScript error: resource://services-settings/RemoteSettingsClient.sys.mjs, line 85: Error: Unknown callback
+1762171117250	geckodriver	INFO	Listening on 127.0.0.1:62387
+1762171120300	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62388" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofileuWehen"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1762171122377	Marionette	INFO	Marionette enabled
+1762171122482	Marionette	INFO	Listening on port 62396
+WebDriver BiDi listening on ws://127.0.0.1:62388
+Read port: 62396
+1762171122683	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+1762171539486	Marionette	INFO	Stopped listening on port 62396
+Dynamically enable window occlusion 1
+console.error: (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: (new Error("OHTTP was configured for https://ads.mozilla.org/v1/delete_user but we couldn't fetch a valid config", "moz-src:///browser/modules/ContextId.sys.mjs", 234))
+console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
+console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/ObliviousHTTP.sys.mjs, line 117: NS_ERROR_XPC_CANT_CONVERT_PRIMITIVE_TO_ARRAY: Cannot convert primitive JavaScript value into an array arg 2 [nsIObliviousHttpService.newChannel]
+JavaScript error: resource://services-settings/RemoteSettingsClient.sys.mjs, line 85: Error: Unknown callback
+1762171544959	geckodriver	INFO	Listening on 127.0.0.1:59592
+1762171547994	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59593" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofileitnOyW"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1762171548305	Marionette	INFO	Marionette enabled
+1762171548380	Marionette	INFO	Listening on port 59604
+WebDriver BiDi listening on ws://127.0.0.1:59593
+Read port: 59604
+1762171548493	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+1762171940767	Marionette	INFO	Stopped listening on port 59604
+Dynamically enable window occlusion 1
+console.error: (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: (new Error("OHTTP was configured for https://ads.mozilla.org/v1/delete_user but we couldn't fetch a valid config", "moz-src:///browser/modules/ContextId.sys.mjs", 234))
+JavaScript error: resource://gre/modules/ObliviousHTTP.sys.mjs, line 117: NS_ERROR_XPC_CANT_CONVERT_PRIMITIVE_TO_ARRAY: Cannot convert primitive JavaScript value into an array arg 2 [nsIObliviousHttpService.newChannel]
+console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
+console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://services-settings/RemoteSettingsClient.sys.mjs, line 85: Error: Unknown callback
+1762171946322	geckodriver	INFO	Listening on 127.0.0.1:57704
+1762171949363	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57705" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofileZ69aKM"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1762171949770	Marionette	INFO	Marionette enabled
+1762171949873	Marionette	INFO	Listening on port 57713
+Read port: 57713
+WebDriver BiDi listening on ws://127.0.0.1:57705
+1762171949943	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1762172518114	geckodriver	INFO	Listening on 127.0.0.1:50667
+1762172521171	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50668" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofileRRrhIH"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1762172521743	Marionette	INFO	Marionette enabled
+1762172521969	Marionette	INFO	Listening on port 50676
+WebDriver BiDi listening on ws://127.0.0.1:50668
+Read port: 50676
+1762172522277	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+Exiting due to channel error.
+1762173152290	geckodriver	INFO	Listening on 127.0.0.1:64938
+1762173155371	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64939" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofileZuRfH0"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1762173155670	Marionette	INFO	Marionette enabled
+1762173155757	Marionette	INFO	Listening on port 64948
+WebDriver BiDi listening on ws://127.0.0.1:64939
+Read port: 64948
+1762173155874	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+JavaScript warning: https://www.saucedemo.com/static/js/2.841762173274711	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53298" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\1762173275086	Marionette	INFO	Stopped listening on port 64948console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1762173275635	Marionette	INFO	Marionette enabled
+1762173275746	Marionette	INFO	Listening on port 53306
+WebDriver BiDi listening on ws://127.0.0.1:53298
+Read port: 53306
+1762173275979	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+1762173428038	Marionette	INFO	Stopped listening on port 53306
+Dynamically enable window occlusion 1
+console.error: (new TypeError("NetworkError when attempting to fetch resource.", "resource://gre/modules/AsyncShutdown.sys.mjs", 569))
+console.error: (new Error("OHTTP was configured for https://ads.mozilla.org/v1/delete_user but we couldn't fetch a valid config", "moz-src:///browser/modules/ContextId.sys.mjs", 234))
+JavaScript error: resource://gre/modules/ObliviousHTTP.sys.mjs, line 117: NS_ERROR_XPC_CANT_CONVERT_PRIMITIVE_TO_ARRAY: Cannot convert primitive JavaScript value into an array arg 2 [nsIObliviousHttpService.newChannel]
+console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
+console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://services-settings/RemoteSettingsClient.sys.mjs, line 85: Error: Unknown callback

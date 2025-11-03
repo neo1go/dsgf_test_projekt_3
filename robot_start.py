@@ -9,5 +9,5 @@ def start_robot_tests():
     robot.run(
         "Tests/robot_tests.robot",
         outputdir=results_dir,
-        loglevel="INFO"
+        loglevel ="error"  # trace, debug, info, warn, error, none
     )
