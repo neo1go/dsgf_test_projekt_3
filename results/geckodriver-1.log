@@ -1,16 +1,16 @@
-1762155116534	geckodriver	INFO	Listening on 127.0.0.1:51627
-1762155119629	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51628" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofileBmtBlm"
+1762160485890	geckodriver	INFO	Listening on 127.0.0.1:61969
+1762160488952	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61970" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofileQuYMsa"
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
 Dynamically enable window occlusion 0
-1762155120101	Marionette	INFO	Marionette enabled
-1762155120182	Marionette	INFO	Listening on port 51637
-WebDriver BiDi listening on ws://127.0.0.1:51628
-Read port: 51637
-1762155120328	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1762160489252	Marionette	INFO	Marionette enabled
+1762160489327	Marionette	INFO	Listening on port 61979
+WebDriver BiDi listening on ws://127.0.0.1:61970
+Read port: 61979
+1762160489461	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.saucedemo.com."
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.saucedemo.com."
-1762155126741	Marionette	INFO	Stopped listening on port 51637
+1762160497342	Marionette	INFO	Stopped listening on port 61979
 Dynamically enable window occlusion 1
 console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
 console.error: (new TypeError("NetworkError when attempting to fetch resource.", ""))
