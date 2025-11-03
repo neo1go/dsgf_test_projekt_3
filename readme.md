@@ -95,3 +95,8 @@ Robot Framework Tests: Nutzen Selenium + GeckoDriver für Browserinteraktion.
 MySQL: Wird lokal über Docker bereitgestellt, Zugang über VSCode Shell oder Adminer möglich.
 
 Optional: Libraries wie robotframework-datadriver oder robotframework-requests können nach Bedarf installiert werden. Wegen der Eigenerstellung mittels Custom Keywords wurd auf deren Nutzung verzichtet.
+
+# Lessons learned
+- Passwörter und alle Credentials vielleicht ganz am Anfang auslagern und diese Datei(en) bereits beim Start  eines Projektes auf die ignore-Liste setzten.
+- podman statt docker wäre noch sicherer, wegen dem rootless Ansatz bzw. dem Fehlen eines daemon.
+- Ich habe mysql gewählt, um nicht zu viele Unbekannte zu haben, es gibt aber sicherere DBs in Bezug auf die Angriffsvektoren wie z.B. PostgreSQL mit höherer Verschlüsselung, Authentifizierung oder feinerer Staffelung der Rechte und einer Sicherheitszertifizierung, die von offizieller Seite her einen Standard garantiert.
