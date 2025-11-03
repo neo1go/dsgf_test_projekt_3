@@ -19,8 +19,6 @@ def main():
     adminer_view()
     time.sleep(10)
     start_robot_tests()
-  
-    
     #stop_containers()
     #remove_containers()
     trim_geckodriver_log()

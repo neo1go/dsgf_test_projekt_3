@@ -6,8 +6,8 @@ __pycache__/
 .env
 
 # Robot Framework
-results/
-*.log
+#results/
+#*.log
 *.xml
 *.html
 
