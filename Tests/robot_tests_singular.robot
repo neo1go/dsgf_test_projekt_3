@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    Settings.keywords.db_keywords
+Library    Settings.keywords.simple_keywords
 Variables  ../saucedemo_users.py
 
 
