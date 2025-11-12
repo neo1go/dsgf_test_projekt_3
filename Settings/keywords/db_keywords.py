@@ -27,8 +27,7 @@ options.set_preference("dom.webnotifications.enabled", False)    # firefox spezi
 options.set_preference("media.volume_scale", "0.0")
 
 
-# hier werden die json credentials geladen für adminer
-
+# hier werden die json-credentials geladen für adminer
 with open("config/config.json", "r") as file:
     config = json.load(file)
 mysql_config = config["mysql"]
@@ -79,7 +78,7 @@ def login_auf_saucedemo(username, password):
     try:
         print(f"🔐 Login-Versuch für Benutzer: {username}")
 
-        # Browser einmal öffnen und offen lassen
+        # Die Browser öffnen und im headless Modus offen lassen
         sl.open_browser("https://www.saucedemo.com/", browser = "firefox", options = options, alias = username)
         sl.input_text("id:user-name", username)
         sl.input_text("id:password", password)
@@ -117,8 +116,7 @@ def login_auf_saucedemo(username, password):
         return "FAIL", str(e)
 
 
-
-@keyword("Login Ergebnis speichern")
+# Speichert login Zustände in der DB
 def save_login_result(username, success, error_message=None):
     conn = get_connection()
     cursor = conn.cursor()
@@ -137,10 +135,10 @@ def save_login_result(username, success, error_message=None):
     print(f"Login Ergebnis gespeichert: {username}, Erfolg: {success}")
 
 
-
+# Zustand für jeden User erfassen
 @keyword("Ist User eingeloggt")
 def ist_user_eingeloggt(username):
-    return LOGIN_STATUS.get(username, False)
+    return LOGIN_STATUS.get(username, False)      # default ist FALSE
 
 
 
@@ -206,8 +204,7 @@ def kaufe_alle_produkte(username):
         return "FAIL", str(e)
 
 
-
-@keyword("Kaufergebnis speichern")
+# speichert Kaufergebnis in DB für jedes Kaufelement
 def save_purchase_result(username, product_name=None, price=None, success=False, error_message=None):
     conn = get_connection()
     cursor = conn.cursor()
@@ -276,8 +273,7 @@ def logout_von_saucedemo(username):
 
 
 
-
-@keyword("Logout Ergebnis speichern")
+# speichert Logout Resultate
 def save_logout_result(username, success, error_message=None):
     conn = get_connection()
     cursor = conn.cursor()
@@ -306,7 +302,7 @@ def save_logout_result(username, success, error_message=None):
 
 
 
-@keyword("Prüfe User Login Status aus Datenbank")
+# Prüft User Login Status aus Datenbank
 def check_user_login_status_from_db(username):
     """Prüft den Login-Status direkt aus der Datenbank"""
     conn = get_connection()

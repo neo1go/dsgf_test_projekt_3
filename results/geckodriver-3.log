@@ -1,24 +1,30 @@
-1762938498447	geckodriver	INFO	Listening on 127.0.0.1:55176
-1762938501523	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55177" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofiledNiYjZ"
+1762942320338	geckodriver	INFO	Listening on 127.0.0.1:57677
+1762942323399	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--no-sandbox" ... "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofiled7SiLJ"
+*** You are running in headless mode.
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
 Dynamically enable window occlusion 0
-1762938501853	Marionette	INFO	Marionette enabled
-1762938501927	Marionette	INFO	Listening on port 55190
-Read port: 55190
-WebDriver BiDi listening on ws://127.0.0.1:55177
-1762938501986	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1762942323687	Marionette	INFO	Marionette enabled
+console.error: "Warning: unrecognized command line flag" "-disable-gpu"
+console.error: "Warning: unrecognized command line flag" "-disable-dev-shm-usage"
+console.error: "Warning: unrecognized command line flag" "-disable-extensions"
+console.error: "Warning: unrecognized command line flag" "-disable-popup-blocking"
+1762942323754	Marionette	INFO	Listening on port 57689
+WebDriver BiDi listening on ws://127.0.0.1:57678
+Read port: 57689
+1762942323863	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: [Exception... "Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIWinTaskbar.getTaskbarProgress]"  nsresult: "0x80070057 (NS_ERROR_ILLEGAL_VALUE)"  location: "JS frame :: moz-src:///browser/components/downloads/DownloadsTaskbar.sys.mjs :: #windowsAttachIndicator :: line 183"  data: no]
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.saucedemo.com."
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.saucedemo.com."
-1762938558102	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1762938560809	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1762938563832	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1762938566511	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1762938569041	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1762938571556	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1762938573720	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1762938716135	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1762938728705	Marionette	INFO	Stopped listening on port 55190
+1762942366569	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1762942369258	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1762942371939	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1762942374617	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1762942376910	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1762942379203	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1762942381379	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1762942501087	Marionette	INFO	Stopped listening on port 57689
 Dynamically enable window occlusion 1
 console.error: (new TypeError("NetworkError when attempting to fetch resource.", ""))
 console.error: (new Error("OHTTP was configured for https://ads.mozilla.org/v1/delete_user but we couldn't fetch a valid config", "moz-src:///browser/modules/ContextId.sys.mjs", 234))
