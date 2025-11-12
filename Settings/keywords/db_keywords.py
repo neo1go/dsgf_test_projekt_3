@@ -7,6 +7,24 @@ from datetime import datetime
 import json
 import time
 
+"""
+Keywords für die nun strikt getrennten Testfälle für eine bessere Abgrenzung.
+
+Args:
+- sl      alle Seleniumaktionen, die im Browser ausgeführt werden
+- rf      die BuiltIn Funktionen steuern Robot-Framework Keywords und Logik
+- LOGIN_STATUS   globaler Zustand jedes Users
+- options         dient hier dem Browser Headless Modus
+
+Keywords
+- Cleanup DB
+- Benutzer in Datenbank einfügen
+- Login auf Saucedemo
+- Ist User eingeloggt
+- Kaufe alle Produkte
+- Logout von Saucedemo
+- Bowser schließen
+"""
 # ==================== Setup ====================
 sl = SeleniumLibrary()
 rf = BuiltIn()
@@ -60,7 +78,7 @@ def insert_user(username, password):
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("SELECT id FROM users WHERE username=%s", (username,))
-    if cursor.fetchone() is None:
+    if cursor.fetchone() is None:    # fetchone holt 1 Zeile aus DB als tuple. Wenn 1te Zeile leer, dann...
         cursor.execute(
             "INSERT INTO users (username, password, logged_in) VALUES (%s, %s, %s)",
             (username, password, False)
