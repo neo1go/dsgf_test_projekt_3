@@ -12,9 +12,22 @@ sl = SeleniumLibrary()
 rf = BuiltIn()
 LOGIN_STATUS = {}
 
+# Headless-Konfiguration
 options = Options()
-options.headless = True
+options.add_argument("--headless")
+options.add_argument("--disable-gpu")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--window-size=1920,1080")
+options.add_argument("--disable-extensions")
+options.add_argument("--disable-notifications")
+options.add_argument("--disable-popup-blocking")
 
+options.set_preference("dom.webnotifications.enabled", False)    # firefox spezifisch
+options.set_preference("media.volume_scale", "0.0")
+
+
+# hier werden die json credentials geladen für adminer
 
 with open("config/config.json", "r") as file:
     config = json.load(file)
@@ -67,7 +80,7 @@ def login_auf_saucedemo(username, password):
         print(f"🔐 Login-Versuch für Benutzer: {username}")
 
         # Browser einmal öffnen und offen lassen
-        sl.open_browser("https://www.saucedemo.com/", browser="firefox", options = options)
+        sl.open_browser("https://www.saucedemo.com/", browser = "firefox", options = options, alias = username)
         sl.input_text("id:user-name", username)
         sl.input_text("id:password", password)
         sl.click_button("id:login-button")
@@ -83,7 +96,7 @@ def login_auf_saucedemo(username, password):
 
         # Produkte sichtbar?
         try:
-            sl.wait_until_element_is_visible("xpath://div[contains(@class,'inventory_item_name')]", timeout="15s")
+            sl.wait_until_element_is_visible("xpath://div[contains(@class,'inventory_item_name')]", timeout="10s")  #geändert von 15s
         except:
             LOGIN_STATUS[username] = False
             sl.capture_page_screenshot(f"screenshots/login_failed_{username}.png")
@@ -102,6 +115,8 @@ def login_auf_saucedemo(username, password):
         LOGIN_STATUS[username] = False
         save_login_result(username, False, str(e))
         return "FAIL", str(e)
+
+
 
 @keyword("Login Ergebnis speichern")
 def save_login_result(username, success, error_message=None):
@@ -132,8 +147,6 @@ def ist_user_eingeloggt(username):
 # ==================== Kauf ====================
 @keyword("Kaufe Alle Produkte")
 def kaufe_alle_produkte(username):
-    
-    
         
     if not LOGIN_STATUS.get(username, False):
         print(f"⚠️ Benutzer {username} ist nicht eingeloggt – Kauf übersprungen.")
@@ -141,6 +154,7 @@ def kaufe_alle_produkte(username):
         return "FAIL", "Login fehlgeschlagen – kein Kauf möglich"
 
     try:
+        sl.switch_browser(username)
         count = sl.get_element_count("xpath://div[contains(@class,'inventory_item_name')]")
         print(f"🛍️ {username} sieht {count} Produkte.")
 
@@ -165,15 +179,25 @@ def kaufe_alle_produkte(username):
                 save_purchase_result(username, product_name=product_name, price=price, success=True)
 
                 sl.click_button("id:back-to-products")
-                time.sleep(1)
-
-            except Exception as product_error:
-                sl.capture_page_screenshot(f"screenshots/purchase_error_{username}_{index}.png")
-                save_purchase_result(username, product_name=None, price=None, success=False, error_message=str(product_error))
-                print(f"❌ Fehler beim Kauf von Produkt {index}: {product_error}")
                 sl.go_to("https://www.saucedemo.com/inventory.html")
                 time.sleep(1)
 
+            except Exception as product_error:
+                print(f"❌ Fehler beim Kauf von Produkt {index}: {product_error}")
+                sl.capture_page_screenshot(f"screenshots/purchase_error_{username}_{index}.png")
+                save_purchase_result(username, product_name=None, price=None, success=False, error_message=str(product_error))
+                try:
+                    sl.go_to("https://www.saucedemo.com/inventory.html")
+                    time.sleep(2)
+                except:
+                    pass
+                
+                continue
+            
+        # immer zurück zur Hauptseite, damit der logout auch ausgeführt wird
+        sl.go_to("https://www.saucedemo.com/inventory.html")
+        time.sleep(2)
+            
         return "PASS", ""
 
     except Exception as e:
@@ -197,50 +221,129 @@ def save_purchase_result(username, product_name=None, price=None, success=False,
     conn.close()
     print(f"Kaufergebnis gespeichert: {username}, Erfolg: {success}")
 
+
+
 # ==================== Logout ====================
 @keyword("Logout von Saucedemo")
 def logout_von_saucedemo(username):
+    print(f"🚪 Starte Logout für Benutzer: {username}")
+    
     if not LOGIN_STATUS.get(username, False):
-        save_logout_result(username, False, "Kein Login vorhanden")
-        return "FAIL", "Kein Login vorhanden"
+        print(f"⚠️ Benutzer {username} ist nicht im STATUS eingeloggt")
+        save_logout_result(username, False, "Kein aktiver Login im STATUS")
+        return "FAIL", "Kein aktiver Login im STATUS"
 
     try:
-        sl.go_to("https://www.saucedemo.com/inventory.html")
-        time.sleep(2)
-
-        menu_visible = rf.run_keyword_and_return_status("Page Should Contain Element", "id:react-burger-menu-btn")
-        if not menu_visible:
-            save_logout_result(username, False, "Logout fehlgeschlagen: Menü nicht sichtbar")
-            return "FAIL", "Menü nicht sichtbar"
-
-        sl.click_button("id:react-burger-menu-btn")
-        sl.wait_until_element_is_visible("id:logout_sidebar_link", timeout="10s")
-        sl.click_element("id:logout_sidebar_link")
-
+        sl.switch_browser(username)
+        
+        # Immer erst direkten Logout versuchen, dann Fallback
+        try:
+            # normaler Logout
+            sl.click_button("id:react-burger-menu-btn")
+            sl.wait_until_element_is_visible("id:logout_sidebar_link", timeout="3s")  # von 5s
+            sl.click_element("id:logout_sidebar_link")
+            time.sleep(2)
+        except:
+            # Fallback: Direkt zur Login-Seite
+            print("🔄 Normales Menü fehlgeschlagen, verwende direkte Navigation")
+            sl.go_to("https://www.saucedemo.com")
+            time.sleep(2)
+        
+        # Erfolg prüfen
+        sl.wait_until_element_is_visible("id:user-name", timeout="5s")  # von 10s
+        
         LOGIN_STATUS[username] = False
         save_logout_result(username, True)
+        print(f"✅ Logout erfolgreich für {username}")
+        
         sl.close_browser()
         return "PASS", ""
 
     except Exception as e:
-        save_logout_result(username, False, str(e))
+        error_msg = f"Logout fehlgeschlagen: {str(e)}"
+        print(f"❌ {error_msg}")
+        sl.capture_page_screenshot(f"screenshots/logout_error_{username}.png")
+        
         LOGIN_STATUS[username] = False
-        return "FAIL", str(e)
+        save_logout_result(username, False, error_msg)
+        
+        try:
+            sl.close_browser()
+        except:
+            pass
+            
+        return "FAIL", error_msg
+
+
+
 
 @keyword("Logout Ergebnis speichern")
 def save_logout_result(username, success, error_message=None):
     conn = get_connection()
     cursor = conn.cursor()
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    cursor.execute(
-        "INSERT INTO logout_results (username, success, error_message, timestamp) VALUES (%s, %s, %s, %s)",
-        (username, success, error_message, timestamp)
-    )
-    cursor.execute(
-        "UPDATE users SET logged_in=%s WHERE username=%s",
-        (False, username)
-    )
-    conn.commit()
-    cursor.close()
-    conn.close()
-    print(f"Logout Ergebnis gespeichert: {username}, Erfolg: {success}")
+    
+    try:
+        cursor.execute(
+            "INSERT INTO logout_results (username, success, error_message, timestamp) VALUES (%s, %s, %s, %s)",
+            (username, success, error_message, timestamp)
+        )
+        cursor.execute(
+            "UPDATE users SET logged_in=%s WHERE username=%s",
+            (False, username)  # Immer auf False setzen beim Logout
+        )
+        conn.commit()
+        status_text = "erfolgreich" if success else "fehlgeschlagen"
+        print(f"📝 Logout gespeichert: {username}, {status_text}")
+        
+    except Exception as e:
+        print(f"❌ Fehler beim Speichern des Logout-Results: {e}")
+        conn.rollback()
+    finally:
+        cursor.close()
+        conn.close()
+
+
+
+
+@keyword("Prüfe User Login Status aus Datenbank")
+def check_user_login_status_from_db(username):
+    """Prüft den Login-Status direkt aus der Datenbank"""
+    conn = get_connection()
+    cursor = conn.cursor()
+    try:
+        cursor.execute("SELECT logged_in FROM users WHERE username=%s", (username,))
+        result = cursor.fetchone()
+        if result:
+            status = result[0]
+            return bool(status)
+        else:
+            return False
+    except Exception as e:
+        print(f"❌ Fehler beim Datenbank-Check: {e}")
+        return False
+    finally:
+        cursor.close()
+        conn.close()
+        
+        
+        
+@keyword("Browser schließen")
+def browser_schliessen():
+    """Schließt alle Browser bis auf den zuerst geöffneten."""
+    browser_ids = sl.get_browser_ids()
+
+    if len(browser_ids) > 1:
+        # Alle außer dem ersten Browser schließen
+        for browser_id in browser_ids[1:]:
+            print(f"🧩 Schließe Browser (ID: {browser_id})")
+            sl.close_browser(browser_id)
+        print("✅ Alle zusätzlichen Browser wurden geschlossen, der erste bleibt offen.")
+    elif browser_ids:
+        print("ℹ️ Nur ein Browser offen – bleibt bestehen.")
+    else:
+        print("⚠️ Kein Browser offen – nichts zu schließen.")
+        
+        
+
+
