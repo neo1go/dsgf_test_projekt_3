@@ -8,22 +8,21 @@ import json
 import time
 
 """
-Keywords für die nun strikt getrennten Testfälle für eine bessere Abgrenzung.
+strikt getrennten Testfälle für eine bessere Abgrenzung.
 
 Args:
-- sl      alle Seleniumaktionen, die im Browser ausgeführt werden
-- rf      die BuiltIn Funktionen steuern Robot-Framework Keywords und Logik
+- sl             alle Seleniumaktionen, die im Browser ausgeführt werden
+- rf             die BuiltIn Funktionen steuern Robot-Framework Keywords und Logik
 - LOGIN_STATUS   globaler Zustand jedes Users
-- options         dient hier dem Browser Headless Modus
-
+- options        dient hier dem Browser Headless Modus
 Keywords
 - Cleanup DB
-- Benutzer in Datenbank einfügen
-- Login auf Saucedemo
-- Ist User eingeloggt
-- Kaufe alle Produkte
-- Logout von Saucedemo
-- Bowser schließen
+- Insert User into DB
+- Login to Saucedemo
+- Is User logged in
+- Buy all products
+- Logout from Saucedemo
+- Close Browser
 """
 # ==================== Setup ====================
 sl = SeleniumLibrary()
@@ -56,8 +55,8 @@ def get_connection():
         user=mysql_config["user"],
         password=mysql_config["password"],
         database=mysql_config["database"]
-    )
-
+        )
+    
 # ==================== DB Cleanup ====================
 @keyword("Cleanup DB")
 def cleanup_db():
@@ -71,9 +70,11 @@ def cleanup_db():
     cursor.close()
     conn.close()
     print("Alte Testdaten gelöscht.")
-
+    
+    
+    
 # ==================== Benutzer ====================
-@keyword("Benutzer in Datenbank einfügen")
+@keyword("Insert User into DB")
 def insert_user(username, password):
     conn = get_connection()
     cursor = conn.cursor()
@@ -89,20 +90,22 @@ def insert_user(username, password):
         print(f"ℹ Benutzer '{username}' existiert bereits.")
     cursor.close()
     conn.close()
-
+    
+    
+    
 # ==================== Login ====================
-@keyword("Login auf Saucedemo")
-def login_auf_saucedemo(username, password):
+@keyword("Login to Saucedemo")
+def login_to_saucedemo(username, password):
     try:
         print(f"🔐 Login-Versuch für Benutzer: {username}")
-
+        
         # Die Browser öffnen und im headless Modus offen lassen
         sl.open_browser("https://www.saucedemo.com/", browser = "firefox", options = options, alias = username)
         sl.input_text("id:user-name", username)
         sl.input_text("id:password", password)
         sl.click_button("id:login-button")
         time.sleep(1)
-
+        
         # Gesperrte Benutzer prüfen
         if rf.run_keyword_and_return_status("Page Should Contain Element", "xpath://h3[contains(text(),'locked out')]"):
             LOGIN_STATUS[username] = False
@@ -110,21 +113,21 @@ def login_auf_saucedemo(username, password):
             save_login_result(username, False, "Benutzer gesperrt")
             sl.close_browser()
             return "FAIL", f"Benutzer gesperrt: {username}"
-
+        
         # Produkte sichtbar?
         try:
-            sl.wait_until_element_is_visible("xpath://div[contains(@class,'inventory_item_name')]", timeout="10s")  #geändert von 15s
+            sl.wait_until_element_is_visible("xpath://div[contains(@class,'inventory_item_name')]", timeout="10s")  # geändert von 15s
         except:
             LOGIN_STATUS[username] = False
             sl.capture_page_screenshot(f"screenshots/login_failed_{username}.png")
             save_login_result(username, False, "Keine Produkte sichtbar oder Timeout")
             sl.close_browser()
             return "FAIL", f"Login fehlgeschlagen für {username}"
-
+        
         LOGIN_STATUS[username] = True
         save_login_result(username, True)
         return "PASS", ""
-
+    
     except Exception as e:
         sl.capture_page_screenshot(f"screenshots/login_error_{username}.png")
         try: sl.close_browser()
@@ -132,8 +135,9 @@ def login_auf_saucedemo(username, password):
         LOGIN_STATUS[username] = False
         save_login_result(username, False, str(e))
         return "FAIL", str(e)
-
-
+    
+    
+    
 # Speichert login Zustände in der DB
 def save_login_result(username, success, error_message=None):
     conn = get_connection()
@@ -151,53 +155,53 @@ def save_login_result(username, success, error_message=None):
     cursor.close()
     conn.close()
     print(f"Login Ergebnis gespeichert: {username}, Erfolg: {success}")
-
-
+    
+    
+    
 # Zustand für jeden User erfassen
-@keyword("Ist User eingeloggt")
-def ist_user_eingeloggt(username):
-    return LOGIN_STATUS.get(username, False)      # default ist FALSE
+@keyword("Is User logged in")
+def is_user_logged_in(username):
+    return LOGIN_STATUS.get(username, False)    # default ist FALSE
 
 
 
 # ==================== Kauf ====================
-@keyword("Kaufe Alle Produkte")
-def kaufe_alle_produkte(username):
-        
-    if not LOGIN_STATUS.get(username, False):
-        print(f"⚠️ Benutzer {username} ist nicht eingeloggt – Kauf übersprungen.")
-        save_purchase_result(username, product_name=None, price=None, success=False, error_message="Login fehlgeschlagen – kein Kauf möglich")
-        return "FAIL", "Login fehlgeschlagen – kein Kauf möglich"
+@keyword("Buy all products")
+def buy_all_products(username):
 
+    if not LOGIN_STATUS.get(username, False):
+        print(f"⚠️ Benutzer {username} ist nicht eingeloggt  Kauf übersprungen.")
+        save_purchase_result(username, product_name=None, price=None, success=False, error_message="Login fehlgeschlagen – kein Kauf möglich")
+        return "FAIL", "Login fehlgeschlagen   kein Kauf möglich"
     try:
         sl.switch_browser(username)
         count = sl.get_element_count("xpath://div[contains(@class,'inventory_item_name')]")
         print(f"🛍️ {username} sieht {count} Produkte.")
-
+        
         for index in range(1, count + 1):
             try:
                 product_name = sl.get_text(f"xpath:(//div[contains(@class,'inventory_item_name')])[{index}]")
                 price = sl.get_text(f"xpath:(//div[contains(@class,'inventory_item_price')])[{index}]")
                 print(f"🧾 Kaufe Produkt {index}/{count}: {product_name} - {price}")
-
+                
                 sl.click_button(f"xpath:(//button[contains(translate(text(),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz'),'add to cart')])[{index}]")
                 sl.click_element("id:shopping_cart_container")
                 sl.wait_until_element_is_visible("id:checkout", timeout="10s")
                 sl.click_button("id:checkout")
-
+                
                 sl.input_text("id:first-name", "Test")
                 sl.input_text("id:last-name", "User")
                 sl.input_text("id:postal-code", "12345")
                 sl.click_button("id:continue")
                 sl.click_button("id:finish")
-
+                
                 sl.page_should_contain("Thank you for your order!")
                 save_purchase_result(username, product_name=product_name, price=price, success=True)
-
+                
                 sl.click_button("id:back-to-products")
                 sl.go_to("https://www.saucedemo.com/inventory.html")
                 time.sleep(1)
-
+                
             except Exception as product_error:
                 print(f"❌ Fehler beim Kauf von Produkt {index}: {product_error}")
                 sl.capture_page_screenshot(f"screenshots/purchase_error_{username}_{index}.png")
@@ -207,19 +211,20 @@ def kaufe_alle_produkte(username):
                     time.sleep(2)
                 except:
                     pass
-                
+ 
                 continue
-            
+
         # immer zurück zur Hauptseite, damit der logout auch ausgeführt wird
         sl.go_to("https://www.saucedemo.com/inventory.html")
         time.sleep(2)
-            
+ 
         return "PASS", ""
-
+    
     except Exception as e:
         sl.capture_page_screenshot(f"screenshots/purchase_error_{username}.png")
         save_purchase_result(username, product_name=None, price=None, success=False, error_message=str(e))
-        return "FAIL", str(e)
+    return "FAIL", str(e)
+
 
 
 # speichert Kaufergebnis in DB für jedes Kaufelement
@@ -235,22 +240,22 @@ def save_purchase_result(username, product_name=None, price=None, success=False,
     cursor.close()
     conn.close()
     print(f"Kaufergebnis gespeichert: {username}, Erfolg: {success}")
-
-
-
-# ==================== Logout ====================
-@keyword("Logout von Saucedemo")
-def logout_von_saucedemo(username):
-    print(f"🚪 Starte Logout für Benutzer: {username}")
     
+    
+    
+# ==================== Logout ====================
+@keyword("Logout from Saucedemo")
+def logout_from_saucedemo(username):
+    print(f"🚪 Starte Logout für Benutzer: {username}")
+
     if not LOGIN_STATUS.get(username, False):
         print(f"⚠️ Benutzer {username} ist nicht im STATUS eingeloggt")
         save_logout_result(username, False, "Kein aktiver Login im STATUS")
         return "FAIL", "Kein aktiver Login im STATUS"
-
+    
     try:
         sl.switch_browser(username)
-        
+
         # Immer erst direkten Logout versuchen, dann Fallback
         try:
             # normaler Logout
@@ -263,40 +268,39 @@ def logout_von_saucedemo(username):
             print("🔄 Normales Menü fehlgeschlagen, verwende direkte Navigation")
             sl.go_to("https://www.saucedemo.com")
             time.sleep(2)
-        
+
         # Erfolg prüfen
         sl.wait_until_element_is_visible("id:user-name", timeout="5s")  # von 10s
-        
+
         LOGIN_STATUS[username] = False
         save_logout_result(username, True)
         print(f"✅ Logout erfolgreich für {username}")
-        
+
         sl.close_browser()
         return "PASS", ""
-
+    
     except Exception as e:
         error_msg = f"Logout fehlgeschlagen: {str(e)}"
         print(f"❌ {error_msg}")
         sl.capture_page_screenshot(f"screenshots/logout_error_{username}.png")
-        
+
         LOGIN_STATUS[username] = False
         save_logout_result(username, False, error_msg)
-        
+
         try:
             sl.close_browser()
         except:
             pass
-            
+
         return "FAIL", error_msg
-
-
-
+    
+    
 # speichert Logout Resultate
 def save_logout_result(username, success, error_message=None):
     conn = get_connection()
     cursor = conn.cursor()
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
+
     try:
         cursor.execute(
             "INSERT INTO logout_results (username, success, error_message, timestamp) VALUES (%s, %s, %s, %s)",
@@ -304,22 +308,20 @@ def save_logout_result(username, success, error_message=None):
         )
         cursor.execute(
             "UPDATE users SET logged_in=%s WHERE username=%s",
-            (False, username)  # Immer auf False setzen beim Logout
+            (False, username)   # Immer auf False setzen beim Logout
         )
         conn.commit()
         status_text = "erfolgreich" if success else "fehlgeschlagen"
         print(f"📝 Logout gespeichert: {username}, {status_text}")
-        
+
     except Exception as e:
         print(f"❌ Fehler beim Speichern des Logout-Results: {e}")
         conn.rollback()
     finally:
         cursor.close()
         conn.close()
-
-
-
-
+        
+        
 # Prüft User Login Status aus Datenbank
 def check_user_login_status_from_db(username):
     """Prüft den Login-Status direkt aus der Datenbank"""
@@ -339,25 +341,23 @@ def check_user_login_status_from_db(username):
     finally:
         cursor.close()
         conn.close()
-        
-        
-        
-@keyword("Browser schließen")
-def browser_schliessen():
+
+
+
+@keyword("Close active Browser")   # ACHTUNG, 'Close Browser' ist ein Framework-Keyword
+def close_active_bowser():
     """Schließt alle Browser bis auf den zuerst geöffneten."""
     browser_ids = sl.get_browser_ids()
-
+    
     if len(browser_ids) > 1:
+        
         # Alle außer dem ersten Browser schließen
         for browser_id in browser_ids[1:]:
             print(f"🧩 Schließe Browser (ID: {browser_id})")
             sl.close_browser(browser_id)
         print("✅ Alle zusätzlichen Browser wurden geschlossen, der erste bleibt offen.")
     elif browser_ids:
-        print("ℹ️ Nur ein Browser offen – bleibt bestehen.")
+        print("ℹ️ Nur ein Browser offen   bleibt bestehen.")
     else:
-        print("⚠️ Kein Browser offen – nichts zu schließen.")
-        
-        
-
+        print("⚠️ Kein Browser offen   nichts zu schließen.")
 
