@@ -1,18 +1,18 @@
-1762942338955	geckodriver	INFO	Listening on 127.0.0.1:57757
-1762942342015	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--no-sandbox" ... "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofileMyv5qr"
+1763397338124	geckodriver	INFO	Listening on 127.0.0.1:50845
+1763397341179	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--no-sandbox" ... "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofileNoVmTM"
 *** You are running in headless mode.
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
 Dynamically enable window occlusion 0
-1762942342298	Marionette	INFO	Marionette enabled
+1763397341490	Marionette	INFO	Marionette enabled
 console.error: "Warning: unrecognized command line flag" "-disable-gpu"
 console.error: "Warning: unrecognized command line flag" "-disable-dev-shm-usage"
 console.error: "Warning: unrecognized command line flag" "-disable-extensions"
 console.error: "Warning: unrecognized command line flag" "-disable-popup-blocking"
-1762942342365	Marionette	INFO	Listening on port 57765
-WebDriver BiDi listening on ws://127.0.0.1:57758
-Read port: 57765
-1762942342475	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1763397341568	Marionette	INFO	Listening on port 50853
+WebDriver BiDi listening on ws://127.0.0.1:50846
+Read port: 50853
+1763397341675	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
 console.error: [Exception... "Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIWinTaskbar.getTaskbarProgress]"  nsresult: "0x80070057 (NS_ERROR_ILLEGAL_VALUE)"  location: "JS frame :: moz-src:///browser/components/downloads/DownloadsTaskbar.sys.mjs :: #windowsAttachIndicator :: line 183"  data: no]
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.saucedemo.com."
@@ -22,35 +22,37 @@ JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: 
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: Ye.cesetRart is not a function
-1762942463283	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763397462770	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: Error: Failed to add item to the cart.
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: Ye.cesetRart is not a function
-1762942466140	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763397465533	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: Error: Failed to add item to the cart.
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: Ye.cesetRart is not a function
-1762942468989	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763397468280	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: Ye.cesetRart is not a function
-1762942471825	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1762942474123	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1762942476444	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1762942478629	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1762942510385	Marionette	INFO	Stopped listening on port 57765
+1763397471014	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763397473279	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763397475581	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763397477868	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763397509703	Marionette	INFO	Stopped listening on port 50853
 Dynamically enable window occlusion 1
 console.error: (new TypeError("NetworkError when attempting to fetch resource.", ""))
 console.error: (new Error("OHTTP was configured for https://ads.mozilla.org/v1/delete_user but we couldn't fetch a valid config", "moz-src:///browser/modules/ContextId.sys.mjs", 234))
 console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
 console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
 JavaScript error: resource://gre/modules/ObliviousHTTP.sys.mjs, line 117: NS_ERROR_XPC_CANT_CONVERT_PRIMITIVE_TO_ARRAY: Cannot convert primitive JavaScript value into an array arg 2 [nsIObliviousHttpService.newChannel]
+JavaScript error: resource:///modules/AboutNewTab.sys.mjs, line 242: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
 JavaScript error: resource://services-settings/RemoteSettingsClient.sys.mjs, line 85: Error: Unknown callback
+JavaScript error: resource://gre/modules/JSONFile.sys.mjs, line 432: TypeError: can't access property "toJSONSafe", this._data is null

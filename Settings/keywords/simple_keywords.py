@@ -25,6 +25,8 @@ def cleanup_db():
     cursor = conn.cursor() 
     cursor.execute("DELETE FROM purchases") 
     cursor.execute("DELETE FROM users") 
+    cursor.execute("DELETE FROM login_results")
+    cursor.execute("DELETE FROM logout_results")
     conn.commit() 
     cursor.close() 
     conn.close() 

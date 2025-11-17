@@ -2499,3 +2499,47 @@ console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError
 console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
 JavaScript error: resource://services-settings/RemoteSettingsClient.sys.mjs, line 85: Error: Unknown callback
 JavaScript error: resource://gre/modules/JSONFile.sys.mjs, line 432: TypeError: can't access property "toJSONSafe", this._data is null
+1763333486958	geckodriver	INFO	Listening on 127.0.0.1:65154
+1763333490001	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65155" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofileW8oJvG"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1763333490311	Marionette	INFO	Marionette enabled
+1763333490396	Marionette	INFO	Listening on port 65165
+Read port: 65165
+WebDriver BiDi listening on ws://127.0.0.1:65155
+1763333490452	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+1763333679601	Marionette	INFO	Stopped listening on port 65165
+Dynamically enable window occlusion 1
+console.error: (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: (new Error("OHTTP was configured for https://ads.mozilla.org/v1/delete_user but we couldn't fetch a valid config", "moz-src:///browser/modules/ContextId.sys.mjs", 234))
+console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
+console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/ObliviousHTTP.sys.mjs, line 117: NS_ERROR_XPC_CANT_CONVERT_PRIMITIVE_TO_ARRAY: Cannot convert primitive JavaScript value into an array arg 2 [nsIObliviousHttpService.newChannel]
+JavaScript error: resource:///modules/AboutNewTab.sys.mjs, line 242: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+JavaScript error: resource://services-settings/RemoteSettingsClient.sys.mjs, line 85: Error: Unknown callback
+JavaScript error: resource://gre/modules/JSONFile.sys.mjs, line 432: TypeError: can't access property "toJSONSafe", this._data is null
+1763333872882	geckodriver	INFO	Listening on 127.0.0.1:49692
+1763333875948	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49693" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofilejdeI56"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+Dynamically enable window occlusion 0
+1763333876288	Marionette	INFO	Marionette enabled
+1763333876362	Marionette	INFO	Listening on port 49702
+WebDriver BiDi listening on ws://127.0.0.1:49693
+Read port: 49702
+1763333876508	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost:8080."
+1763334119417	Marionette	INFO	Stopped listening on port 49702
+Dynamically enable window occlusion 1
+console.error: (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: (new Error("OHTTP was configured for https://ads.mozilla.org/v1/delete_user but we couldn't fetch a valid config", "moz-src:///browser/modules/ContextId.sys.mjs", 234))
+console.error: "Failed to fetch https://spocs.getpocket.com/user:" "NetworkError when attempting to fetch resource."
+console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/ObliviousHTTP.sys.mjs, line 117: NS_ERROR_XPC_CANT_CONVERT_PRIMITIVE_TO_ARRAY: Cannot convert primitive JavaScript value into an array arg 2 [nsIObliviousHttpService.newChannel]
+JavaScript error: resource:///modules/AboutNewTab.sys.mjs, line 242: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
+JavaScript error: resource://services-settings/RemoteSettingsClient.sys.mjs, line 85: Error: Unknown callback
+JavaScript error: resource://gre/modules/JSONFile.sys.mjs, line 432: TypeError: can't access property "toJSONSafe", this._data is null
