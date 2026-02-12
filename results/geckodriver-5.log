@@ -1,18 +1,18 @@
-1763397338124	geckodriver	INFO	Listening on 127.0.0.1:50845
-1763397341179	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--no-sandbox" ... "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofileNoVmTM"
+1763562226747	geckodriver	INFO	Listening on 127.0.0.1:54081
+1763562229843	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--disable-gpu" "--no-sandbox" ... "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\WILLKO~1\\AppData\\Local\\Temp\\rust_mozprofile68i52y"
 *** You are running in headless mode.
 console.warn: services.settings: Ignoring preference override of remote settings server
 console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
 Dynamically enable window occlusion 0
-1763397341490	Marionette	INFO	Marionette enabled
+1763562230552	Marionette	INFO	Marionette enabled
 console.error: "Warning: unrecognized command line flag" "-disable-gpu"
 console.error: "Warning: unrecognized command line flag" "-disable-dev-shm-usage"
 console.error: "Warning: unrecognized command line flag" "-disable-extensions"
 console.error: "Warning: unrecognized command line flag" "-disable-popup-blocking"
-1763397341568	Marionette	INFO	Listening on port 50853
-WebDriver BiDi listening on ws://127.0.0.1:50846
-Read port: 50853
-1763397341675	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1763562230747	Marionette	INFO	Listening on port 54095
+WebDriver BiDi listening on ws://127.0.0.1:54082
+Read port: 54095
+1763562230970	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 [GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
 console.error: [Exception... "Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIWinTaskbar.getTaskbarProgress]"  nsresult: "0x80070057 (NS_ERROR_ILLEGAL_VALUE)"  location: "JS frame :: moz-src:///browser/components/downloads/DownloadsTaskbar.sys.mjs :: #windowsAttachIndicator :: line 183"  data: no]
 console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.saucedemo.com."
@@ -22,31 +22,31 @@ JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: 
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: Ye.cesetRart is not a function
-1763397462770	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763562384356	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: Error: Failed to add item to the cart.
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: Ye.cesetRart is not a function
-1763397465533	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763562387960	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: Error: Failed to add item to the cart.
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: Ye.cesetRart is not a function
-1763397468280	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763562391632	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: can't access property "value", e.totallyUndefined is undefined
 JavaScript error: https://www.saucedemo.com/static/js/main.bcf4bc5f.js, line 2: TypeError: Ye.cesetRart is not a function
-1763397471014	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1763397473279	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1763397475581	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1763397477868	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
-1763397509703	Marionette	INFO	Stopped listening on port 50853
+1763562395217	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763562398673	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763562401745	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763562404831	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1763562452993	Marionette	INFO	Stopped listening on port 54095
 Dynamically enable window occlusion 1
 console.error: (new TypeError("NetworkError when attempting to fetch resource.", ""))
 console.error: (new Error("OHTTP was configured for https://ads.mozilla.org/v1/delete_user but we couldn't fetch a valid config", "moz-src:///browser/modules/ContextId.sys.mjs", 234))

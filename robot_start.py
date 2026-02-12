@@ -7,7 +7,6 @@ def start_robot_tests():
     os.makedirs(results_dir, exist_ok=True)
 
     robot.run(
-        #"Tests/robot_tests_singular.robot",
         "Tests/robot_tests_seperated.robot",
         outputdir=results_dir,
         loglevel ="error"  # trace, debug, info, warn, error, none
